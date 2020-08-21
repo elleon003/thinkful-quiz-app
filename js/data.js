@@ -201,4 +201,5 @@ const DATA = {
   ],
   currentScore: 0,
   quizStopped: true,
+  currentQuestionNumber: 0,
 }

@@ -12,21 +12,40 @@ Be fully usable by keyboard(which will be easy enough
 Use responsive design.
 */
 
+/* <section class="js-quiz-intro"></section>
+    <section class="js-question"></section>
+    <section class="js-response"></section>
+    <section class="js-quiz-results"></section> */
+
+function clearHTML(section) {
+  return section.html(" ");
+}
+
 function renderQuiz() {
-  // check for quizStarted status
   if (DATA.quizStopped){
+    clearHTML($('.js-quiz-results'));
     $('.js-quiz-intro').html(generateQuizIntroTemplate());
+
+    // render current Question 
+  } else if (DATA.currentQuestionNumber < DATA.questions.length) {
+    clearHTML($('.js-quiz-intro'));
+    $('.js-question').html(generateQuizQuestionTemplate(DATA.currentQuestionNumber));
+
+    // render results template
+  } else {
+    clearHTML($('.js-response'));
+    $('.js-quiz-results').html(generateQuizResultsTemplate());
   }
-  // If quiz is not started, generate intro page
-  // If started, generate correct question
-  // If at the end, generate final page
+  
   console.log(`renderQuiz ran`);
 }
 
 function handleStartQuizButton() {
   // start quiz
   $('.js-quiz-intro').on ('click', '#js-start-quiz-button', function(event){
+    DATA.quizStopped = false;
     console.log(`handleStartQuizButton clicked`);
+    renderQuiz();
   });
   
 }
