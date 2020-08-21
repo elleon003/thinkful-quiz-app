@@ -11,3 +11,33 @@ Be fully usable by keyboard(which will be easy enough
   if you start with a form).
 Use responsive design.
 */
+
+function renderQuiz() {
+  // This function is responsible for presenting the starting screen of the quiz
+  console.log(`renderQuiz ran`);
+}
+
+function handleStartQuizButton() {
+  // This function is responsible for generating and presenting the current question.
+  console.log(`handleStartQuizButton clicked`);
+}
+
+function handleSubmitAnswerButton() {
+  // This function is responsible for accepting user answer and presenting the result of the current question
+  console.log(`handleSubmitAnswerButton clicked`);
+}
+
+function handleNextQuestionButton() {
+  // This function is responsible for moving the user to the next question, or to the final result if at the end of the quiz.
+  console.log(`handleNextQuestionButton clicked`);
+}
+
+function runQuiz() {
+  // This is the main quiz function - powers all the primary quiz functions
+  renderQuiz();
+  handleStartQuizButton();
+  handleSubmitAnswerButton();
+  handleNextQuestionButton();
+}
+
+$(runQuiz);
