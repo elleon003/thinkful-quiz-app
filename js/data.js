@@ -185,7 +185,7 @@ const DATA = {
       // Score of 3 or less
       bad:
       {
-        phrase: "Do you know what a Sim is?........",
+        phrase: "Um...do you know what a Sim is?",
         image:
         {
           url: new URL('/images/my_sims_pics/04-me_confused_sim.png', baseURL),
