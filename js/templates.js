@@ -7,7 +7,7 @@ function generateQuizIntroTemplate(){
       <img src="/images/my_sims_pics/01-me_computer.png"
       alt = "Sim version of me at computer">
     </div>
-    <a role="button" tabindex="0" class="quiz-nav" id="js-start-quiz-button" href="#">Start The Quiz!</a>
+    <button tabindex="0" id="js-start-quiz-button">Start The Quiz!</button>
 `;
 }
 
@@ -17,7 +17,7 @@ function generateAnswersTemplate(answers) {
   let answerOptions = "";
   for (let a in answers) {
     answerOptions +=
-   `<input role="button" type="radio" id="${answers[a]}" name="${answers[a]}" required>
+   `<input role="button" class="js-answers" type="radio" value="${answers[a]}" id="${answers[a]}" name="answers" required>
     <label for="${answers[a]}" class="answer-label">${answers[a]}</label>
     `;
   }
@@ -28,14 +28,38 @@ function generateQuizQuestionTemplate(questionNumber) {
   let answers = generateAnswersTemplate(DATA.questions[questionNumber].answers);
   return `
     <h2>Question ${questionNumber + 1}/10</h2>
-      <h3>Current Score: ${DATA.currentScore}</h3>
+    <h3>Current Score: ${DATA.currentScore}</h3>
+    <div class="thumbnail-img">
+      <img src="${DATA.questions[questionNumber].image.url}" alt="${DATA.questions[questionNumber].image.alt}">
+    </div>
+    <div class="js-questions-results-display">
       <p>${DATA.questions[questionNumber].question}</p>
-      <div class="thumbnail-img">
-        <img src="${DATA.questions[questionNumber].image.url}" alt="${DATA.questions[questionNumber].image.alt}">
-      </div>
-      <form action="response-template.html">
+      <form class="js-question-form">
         ${answers}
         <input role="button" type="submit" value="Submit Answer">
       </form>
-  `
+    </div>
+  `   
+}
+
+function generateAnswerTemplate(correctAnswer, answeredCorrectly) {
+  let QuizQuestionHeader = renderQuiz();
+  if (answeredCorrectly){
+    return QuizQuestionHeader +=
+    $('.js-questions-results-display').html(
+      `
+      <p><strong>${correctAnswer}</strong> is correct!!</p>
+      <button tabindex="0" class="js-next-question-button">Next Button</button>
+     `
+    );
+  } else {
+    return QuizQuestionHeader += $('.js-questions-results-display').html(
+      `
+      <p>Nope! The correct answer is <strong>${correctAnswer}</strong></p>
+      <button tabindex="0" class="js-next-question-button">Next Question</button>
+      `
+    );
+  }
+  
+  
 }

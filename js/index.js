@@ -12,11 +12,6 @@ Be fully usable by keyboard(which will be easy enough
 Use responsive design.
 */
 
-/* <section class="js-quiz-intro"></section>
-    <section class="js-question"></section>
-    <section class="js-response"></section>
-    <section class="js-quiz-results"></section> */
-
 function clearHTML(section) {
   return section.html(" ");
 }
@@ -29,16 +24,16 @@ function renderQuiz() {
     // render current Question 
   } else if (DATA.currentQuestionNumber < DATA.questions.length) {
     clearHTML($('.js-quiz-intro'));
-    $('.js-question').html(generateQuizQuestionTemplate(DATA.currentQuestionNumber));
+    $('.js-question-answer').html(generateQuizQuestionTemplate(DATA.currentQuestionNumber));
 
     // render results template
   } else {
     clearHTML($('.js-response'));
     $('.js-quiz-results').html(generateQuizResultsTemplate());
   }
-  
   console.log(`renderQuiz ran`);
 }
+
 
 function handleStartQuizButton() {
   // start quiz
@@ -51,8 +46,39 @@ function handleStartQuizButton() {
 }
 
 function handleSubmitAnswerButton() {
-  // This function is responsible for accepting user answer and presenting the result of the current question
+  // This function is responsible for accepting user answer 
+  $('.js-question-answer').on('submit','.js-question-form', function(event){
+    event.preventDefault();
+    console.log(`handleSubmitAnswerButton clicked`);
+    let answer = getUserAnswer($('.js-question-form').find('.js-answers'));
+    scoreAnswer(answer, DATA.questions[DATA.currentQuestionNumber].correctAnswer);
+  });
 }
+
+function getUserAnswer(answers){
+  let value;
+  // capture submitted answer to current question
+  for (let answer in answers) {
+    if (answers[answer].checked) {
+      value = answers[answer].value;
+      break
+    }
+  }
+  return value;
+}
+
+function scoreAnswer(userAnswer, correctAnswer){
+  let answeredCorrectly;
+  // take submitted answer and compare to the question's correct answer
+  if (userAnswer === correctAnswer) {
+    DATA.currentScore++;
+    answeredCorrectly = true;
+  } else {
+    answeredCorrectly = false;
+  }
+  return generateAnswerTemplate(correctAnswer, answeredCorrectly);
+}
+
 
 function handleNextQuestionButton() {
   // This function is responsible for moving the user to the next question, or to the final result if at the end of the quiz.

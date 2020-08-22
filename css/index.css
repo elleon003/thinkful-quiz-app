@@ -36,33 +36,28 @@ img {
   display:block;
 }
 
-.quiz-nav {
+button,
+input[type="submit"] {
   background-color:gray;
-  padding: 1.5em;
-  width:46%;
+  padding: 1em;
   display: block;
-  margin: 2em auto;
+  margin: 1em auto;
   text-align:center;
 }
 
-.quiz-nav {
-  text-decoration: none;
-  color: black;
-}
-
-.quiz-nav:hover {
+button:hover {
   background-color:rgb(41, 40, 40);
   color:white;
 }
 
-.quiz-nav:active,
-.quiz-nav:focus {
+button:active,
+button:focus {
   border: 1px solid black;
 }
 
 
 /*********QUESTION TEMPLATE*********/
-.js-question {
+.question-answer {
   width: 76%;
   margin: 0 auto;
 }
@@ -95,10 +90,3 @@ input[type="radio"]:hover + label {
   border: 1px solid black;
 }
 
-input[type="submit"] {
-  background-color:gray;
-  padding: 1em;
-  display: block;
-  margin: 1em auto;
-  text-align:center;
-}
