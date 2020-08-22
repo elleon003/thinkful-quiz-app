@@ -28,8 +28,8 @@ function renderQuiz() {
 
     // render results template
   } else {
-    clearHTML($('.js-response'));
-    $('.js-quiz-results').html(generateQuizResultsTemplate());
+    clearHTML($('.js-question-answer'));
+    $('.js-quiz-results').html(generateQuizFinalResultsTemplate(DATA.currentScore));
   }
   console.log(`renderQuiz ran`);
 }
@@ -82,6 +82,19 @@ function scoreAnswer(userAnswer, correctAnswer){
 
 function handleNextQuestionButton() {
   // This function is responsible for moving the user to the next question, or to the final result if at the end of the quiz.
+  $('.js-question-answer').on('click','.js-next-question-button', function(event){
+    DATA.currentQuestionNumber++
+    renderQuiz();
+  });
+}
+
+function handleRestartQuizButton(){
+  $('.js-quiz-results').on('click','#js-restart-quiz-button', function(event){
+    DATA.currentScore = 0;
+    DATA.quizStopped = true;
+    DATA.currentQuestionNumber = 0;
+    renderQuiz();
+  });
 }
 
 function runQuiz() {
@@ -90,6 +103,7 @@ function runQuiz() {
   handleStartQuizButton();
   handleSubmitAnswerButton();
   handleNextQuestionButton();
+  handleRestartQuizButton();
 }
 
 $(runQuiz);

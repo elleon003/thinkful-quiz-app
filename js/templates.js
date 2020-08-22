@@ -49,17 +49,34 @@ function generateAnswerTemplate(correctAnswer, answeredCorrectly) {
     $('.js-questions-results-display').html(
       `
       <p><strong>${correctAnswer}</strong> is correct!!</p>
-      <button tabindex="0" class="js-next-question-button">Next Button</button>
+      <button tabindex="0" class="js-next-question-button">Moving On!</button>
      `
     );
   } else {
     return QuizQuestionHeader += $('.js-questions-results-display').html(
       `
       <p>Nope! The correct answer is <strong>${correctAnswer}</strong></p>
-      <button tabindex="0" class="js-next-question-button">Next Question</button>
+      <button tabindex="0" class="js-next-question-button">Moving On!</button>
       `
     );
   }
-  
-  
+}
+
+function generateQuizFinalResultsTemplate(currentScore) {
+  let status;
+  if (currentScore >= 7){
+    status = DATA.results.great;
+  } else if (currentScore >= 4) {
+    status = DATA.results.good;
+  } else {
+    status = DATA.results.bad;
+  }
+  return `
+    <h2>Final score: ${currentScore}/10</h2>
+    <div class="featured-img">
+      <img src="${status["image"]["url"]}" alt="${status["image"]["alt"]}">
+    </div>
+    <p>${status["phrase"]}</p>
+    <button tabindex="0" id="js-restart-quiz-button">Restart The Quiz!</button>
+  `
 }

@@ -162,8 +162,7 @@ const DATA = {
       }
     }    
   ],
-  results: [
-    {
+  results: {
       // Score of 7 - 10
       great: 
       {
@@ -172,9 +171,7 @@ const DATA = {
           url: new URL('/images/my_sims_pics/02-me_selfie_sim.png', baseURL),
           alt: "Sim version of me taking a selfie",
         }
-      }
-    },
-    {
+      },
       // Score of 4 - 6
       good: 
       {
@@ -184,9 +181,7 @@ const DATA = {
           url: new URL('/images/my_sims_pics/03-me_laughing_sim.png', baseURL),
           alt: "Sim version of me laughing."
         }
-      }
-    },
-    {
+      },
       // Score of 3 or less
       bad:
       {
@@ -196,9 +191,8 @@ const DATA = {
           url: new URL('/images/my_sims_pics/04-me_confused_sim.png', baseURL),
           alt: "Sim version of me looking annoyed and confused."
         }
-      }
     }
-  ],
+  },
   currentScore: 0,
   quizStopped: true,
   currentQuestionNumber: 0,
