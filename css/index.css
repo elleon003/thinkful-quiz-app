@@ -57,13 +57,13 @@ button:focus {
 
 
 /*********QUESTION TEMPLATE*********/
-.question-answer {
-  width: 76%;
+.container {
+  width: 80%;
   margin: 0 auto;
 }
 
 .thumbnail-img {
-  width: 50%;
+  width: 65%;
   margin: 0 auto;
 }
 
