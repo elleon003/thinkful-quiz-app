@@ -1,7 +1,14 @@
-/* SBX grey - #3d3935 */
-/*********GLOBAL*********/
+@font-face {
+  font-family: "SimLLHP";
+  src:url("../fonts/SimLLHP.woff") format("woff"), /* Modern Browsers */
+      url("../fonts/SimLLHP.woff2") format("woff2"); /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   font-family: sans-serif;
+  background-color: #3D3935
 }
 
 h1,
@@ -11,15 +18,44 @@ p {
   text-align: center;
 }
 
+span,
+h2,
+h3 {
+  font-family: "SimLLHP", sans-serif;
+  background: -webkit-linear-gradient(#8ec020, #148f3d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+button {
+  font-family: "SimLLHP", sans-serif;
+  background: -webkit-linear-gradient(#8ec020, #148f3d);
+}
+
+h1 {
+  font-size: 4rem;
+  margin: 0.67em 0 .35em 0;
+}
+
+h2 {
+  font-size: 2rem;
+  margin:0.35em 0 0.5em 0;
+}
+
+h3 {
+  font-size: 1.35rem;
+}
+
+p {
+  color: #FFF5EE;
+}
+
 header,
 main {
   width: 96%;
   margin: 0 auto;
 }
 
-header {
-  margin: 1.25rem auto;
-}
 
 #logo {
   max-width: 100%;
@@ -91,3 +127,14 @@ input[type="radio"]:hover + label {
   border: 1px solid black;
 }
 
+/*********DESKTOP STYLES*********/
+@media all and (min-width: 850px) {
+  .featured-img{
+    width: 60%;
+    height: 20rem;
+  }
+
+  img {
+    max-height: 100%;
+  }
+}
