@@ -27,15 +27,13 @@ function generateAnswersTemplate(answers) {
 function generateQuizQuestionTemplate(questionNumber) {
   let answers = generateAnswersTemplate(DATA.questions[questionNumber].answers);
   return `
-    <div class="question-score-display">
-      <h2>Question ${questionNumber + 1}/10</h2>
-      <h3>Current Score: ${DATA.currentScore}</h3>
-    </div>
+    <h2>Question ${questionNumber + 1}/10</h2>
+    <h3>Current Score: ${DATA.currentScore}</h3>
     <div class="thumbnail-img">
       <img src="${DATA.questions[questionNumber].image.url}" alt="${DATA.questions[questionNumber].image.alt}">
     </div>
-    <div class="js-questions-results-display questions-results-display">
-      <p class="quiz-question"><span class="question-indicator"> Q: </span>${DATA.questions[questionNumber].question}</p>
+    <div class="js-questions-results-display">
+      <p>${DATA.questions[questionNumber].question}</p>
       <form class="js-question-form">
         ${answers}
         <input role="button" type="submit" value="Submit Answer">
