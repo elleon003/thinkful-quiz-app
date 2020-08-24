@@ -13,7 +13,7 @@ const DATA = {
       ],
       correctAnswer: "2000",
       image: {
-        url: new URL('/images/01-Sims-1.jpg', baseURL),
+        url: new URL('images/01-Sims-1.jpg', baseURL),
         alt: "Screenshot from Sims 1 - sims in a living room",
       }
     },
@@ -29,7 +29,7 @@ const DATA = {
       correctAnswer: "Simoleons",
       image: 
       {
-        url: new URL('/images/02-Sim-Money-Bag.jpg', baseURL),
+        url: new URL('images/02-Sim-Money-Bag.jpg', baseURL),
         alt: "Sack of Sim money",
       }
     },
@@ -45,7 +45,7 @@ const DATA = {
       correctAnswer: "Belladonna Cove",
       image:
       {
-        url: new URL('/images/03-Sims-2-World.jpg', baseURL),
+        url: new URL('images/03-Sims-2-World.jpg', baseURL),
         alt: "Aerial view of a Sims 2 World",
       }
     },
@@ -61,7 +61,7 @@ const DATA = {
       correctAnswer: "Plumbob",
       image: 
       {
-        url: new URL('/images/04-Sims-Diamond.jpg', baseURL),
+        url: new URL('images/04-Sims-Diamond.jpg', baseURL),
         alt: "Toddler Sim talking to her babysitter.",
       }
     },
@@ -77,7 +77,7 @@ const DATA = {
       correctAnswer: "Sul Sul",
       image: 
       {
-        url: new URL('/images/05-Sims-Greeting.jpg', baseURL),
+        url: new URL('images/05-Sims-Greeting.jpg', baseURL),
         alt: "Two Sims waving at each other."
       }
     },
@@ -93,7 +93,7 @@ const DATA = {
       correctAnswer: "Bridgeport",
       image:
       {
-        url: new URL('/images/06-Sims-3-World.jpg', baseURL),
+        url: new URL('images/06-Sims-3-World.jpg', baseURL),
         alt: "Aerial view of a Sims 3 World."
       }
     },
@@ -109,7 +109,7 @@ const DATA = {
       correctAnswer: "Pool",
       image: 
       {
-        url: new URL('/images/07-Sims-WooHoo.jpg', baseURL),
+        url: new URL('images/07-Sims-WooHoo.jpg', baseURL),
         alt: "Sims in mid 'WooHoo' in bed."
       }
     },
@@ -125,7 +125,7 @@ const DATA = {
       correctAnswer: "Simlish",
       image: 
       {
-        url: new URL('/images/08-Sims-Talking.jpg', baseURL),
+        url: new URL('images/08-Sims-Talking.jpg', baseURL),
         alt: "Sim couple arguing over pancakes."
       }
     },
@@ -157,7 +157,7 @@ const DATA = {
       correctAnswer: "San Myshuno",
       image: 
       {
-        url: new URL('/images/10-Sims-4-World.jpg', baseURL),
+        url: new URL('images/10-Sims-4-World.jpg', baseURL),
         alt: "Aerial view of a Sims 3 World."
       }
     }    
@@ -168,7 +168,7 @@ const DATA = {
       {
         phrase: "Congrats! Clearly you've spent at least a year's worth of hours on this game!",
         image: {
-          url: new URL('/images/my_sims_pics/02-me_selfie_sim.png', baseURL),
+          url: new URL('images/my_sims_pics/02-me_selfie_sim.png', baseURL),
           alt: "Sim version of me taking a selfie",
         }
       },
@@ -178,7 +178,7 @@ const DATA = {
         phrase: "OK, so you played at least once in the last decade. Good job!",
         image:
         {
-          url: new URL('/images/my_sims_pics/03-me_laughing_sim.png', baseURL),
+          url: new URL('images/my_sims_pics/03-me_laughing_sim.png', baseURL),
           alt: "Sim version of me laughing."
         }
       },
@@ -188,7 +188,7 @@ const DATA = {
         phrase: "Um...do you know what a Sim is?",
         image:
         {
-          url: new URL('/images/my_sims_pics/04-me_confused_sim.png', baseURL),
+          url: new URL('images/my_sims_pics/04-me_confused_sim.png', baseURL),
           alt: "Sim version of me looking annoyed and confused."
         }
     }
