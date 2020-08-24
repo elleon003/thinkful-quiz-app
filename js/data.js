@@ -175,7 +175,7 @@ const DATA = {
       // Score of 4 - 6
       good: 
       {
-        phrase: "OK, so you played at least once in the last decade.",
+        phrase: "OK, so you played at least once in the last decade. Good job!",
         image:
         {
           url: new URL('/images/my_sims_pics/03-me_laughing_sim.png', baseURL),

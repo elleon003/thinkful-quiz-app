@@ -23,9 +23,9 @@ function renderQuiz() {
 
     // render current Question 
   } else if (DATA.currentQuestionNumber < DATA.questions.length) {
-    clearHTML($('.js-quiz-intro'));
     $('.js-question-answer').html(generateQuizQuestionTemplate(DATA.currentQuestionNumber));
-
+    clearHTML($('.js-quiz-intro'));
+    
     // render results template
   } else {
     clearHTML($('.js-question-answer'));
