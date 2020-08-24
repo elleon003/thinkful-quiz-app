@@ -1,4 +1,4 @@
-const baseURL = '/';
+const baseURL = 'https://elleon003.github.io/';
 
 const DATA = {
   questions: [
